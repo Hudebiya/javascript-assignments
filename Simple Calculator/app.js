@@ -5,17 +5,15 @@ function put(value) {
   display.value = display.value + value; 
 }
 
-// Display clear karna
 function clearDisplay() {
   document.getElementById("display").value = "";
 }
 
-// Calculation karna
 function calculate() {
   var calculation = document.getElementById("display").value;
   
   if (calculation) {
-    var result = eval(calculation);  // math expression solve
+    var result = eval(calculation);  
     document.getElementById("display").value = result;
   }
 }
