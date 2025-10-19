@@ -1,96 +1,52 @@
-/* General reset */
+/* General reset and Font - No Change */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
 }
 
+/* Background Image aur Basic Body Style */
 body {
-  background: linear-gradient(135deg, #004e92, #000428);
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    /* Background Image: Aapki di hui link */
+    background-image: url('assets/2\ background\ img.jpg'); 
+    background-size: cover; /* Image ko poori screen par fit karega */
+    background-position: center bottom; /* Bottom ko focus karein taaki mountains dikhein */
+    background-attachment: fixed; /* Scroll karne par background apni jagah par rahega */
+    
+    /* Overlay: Bright image par text aur cards ko zyada visible banane ke liye */
+    background-color: rgba(0, 0, 0, 0.45); /* Halka sa kala (dark) overlay */
+    background-blend-mode: multiply; /* Image aur color ko mix karega */
 
+    color: #fff; /* Text hamesha safed (white) rahega */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header */
+/* Header - Thoda zyada emphasis (zor) dete hain */
 .main-header {
-  text-align: center;
-  margin-top: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow taaki text background mein ghul na jaaye */
 }
 
-.main-header h1 {
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-}
-
-.main-header p {
-  margin-top: 10px;
-  font-size: 1.1rem;
-  color: #ddd;
-}
-
-/* Game Menu */
-.menu-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 60px;
-}
-
+/* Game Card - Custom style ko adjust karein */
 .game-card {
-  background: rgb(60, 108, 121);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  padding: 30px;
-  width: 260px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background 0.3s ease;
-  backdrop-filter: blur(10px);
+    /* Darker Background: Bright background par yeh cards zyada acche lagenge */
+    background: rgba(0, 0, 0, 0.65); /* Thoda zyada gehra transparent black */
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9); /* Gehri shadow */
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px); /* Thoda zyada blur taaki background mazeed blur ho jaaye */
 }
 
 .game-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px) scale(1.02);
+    background: rgba(0, 0, 0, 0.8); /* Hover par aur gehra ho jaaye */
 }
 
-.game-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-.game-card p {
-  font-size: 0.95rem;
-  margin-bottom: 25px;
-  color: #eee;
-}
-
-/* Button */
-.play-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ffcc00;
-  color: #333;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.play-btn:hover {
-  background: #ffd633;
-}
-
-/* Footer */
-footer {
-  margin-top: auto;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #ccc;
+/* Footer ko bhi zaroori adjustment */
+footer.bg-dark {
+    /* Bootstrap se bg-dark class remove kar sakte hain ya usko override (badal) kar sakte hain */
+    background: rgba(0, 0, 0, 0.7) !important;
 }
