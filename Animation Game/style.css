@@ -1,4 +1,3 @@
-/* General reset and Font - No Change */
 * {
     margin: 0;
     padding: 0;
@@ -6,47 +5,278 @@
     font-family: 'Poppins', sans-serif; 
 }
 
-/* Background Image aur Basic Body Style */
-body {
-    /* Background Image: Aapki di hui link */
-    background-image: url('assets/2\ background\ img.jpg'); 
-    background-size: cover; /* Image ko poori screen par fit karega */
-    background-position: center bottom; /* Bottom ko focus karein taaki mountains dikhein */
-    background-attachment: fixed; /* Scroll karne par background apni jagah par rahega */
-    
-    /* Overlay: Bright image par text aur cards ko zyada visible banane ke liye */
-    background-color: rgba(0, 0, 0, 0.45); /* Halka sa kala (dark) overlay */
-    background-blend-mode: multiply; /* Image aur color ko mix karega */
 
-    color: #fff; /* Text hamesha safed (white) rahega */
+body {
+    background-image: url('assets/2\ background\ img.jpg'); 
+    background-size: cover; 
+    background-position: center bottom; 
+    background-attachment: fixed; 
+    background-color: rgba(0, 0, 0, 0.45); 
+    background-blend-mode: multiply; 
+    color: #fff; 
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* Header - Thoda zyada emphasis (zor) dete hain */
 .main-header {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Shadow taaki text background mein ghul na jaaye */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
 }
 
-/* Game Card - Custom style ko adjust karein */
 .game-card {
-    /* Darker Background: Bright background par yeh cards zyada acche lagenge */
-    background: rgba(0, 0, 0, 0.65); /* Thoda zyada gehra transparent black */
+    background: rgba(0, 0, 0, 0.65); 
     border: 1px solid rgba(255, 255, 255, 0.3); 
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9); /* Gehri shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9); 
     transition: transform 0.3s ease;
-    backdrop-filter: blur(10px); /* Thoda zyada blur taaki background mazeed blur ho jaaye */
+    backdrop-filter: blur(10px); 
 }
 
 .game-card:hover {
     transform: translateY(-5px) scale(1.02);
-    background: rgba(0, 0, 0, 0.8); /* Hover par aur gehra ho jaaye */
+    background: rgba(0, 0, 0, 0.8); 
 }
 
-/* Footer ko bhi zaroori adjustment */
+
 footer.bg-dark {
-    /* Bootstrap se bg-dark class remove kar sakte hain ya usko override (badal) kar sakte hain */
     background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.game-grid {
+    display: block; 
+    position: relative; 
+    width: 100%;
+    max-width: 450px; 
+    aspect-ratio: 1 / 1; 
+    margin: 0 auto;
+    border: 5px solid #7eff9a; 
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+.block {
+    position: absolute; 
+    width: calc(100% / 6); 
+    height: calc(100% / 6); 
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.3); 
+    display: flex;
+    transition: all 0.3s ease-in-out, opacity 0.2s ease; 
+}
+
+.score-panel {
+    background: #000 !important;
+    border: 2px solid #7eff9a;
+}
+
+body.color-game-body {
+    background-image: url('assets/background\ -\ plain.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.5) !important; /* !important zaroori hai */
+    background-blend-mode: overlay; 
+}
+
+body.memory-game-body {
+    background-image: url('assets/memory\ bg-img.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    background-blend-mode: multiply;
+}
+
+#game-board {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card-container {
+    height: 120px; 
+    aspect-ratio: 1/1; 
+    cursor: pointer;
+    perspective: 1000px; 
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-container.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-container.matched .card-inner {
+    box-shadow: 0 0 20px #7eff9a; 
+    border: 2px solid #7eff9a;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card-back {
+    background-color: #00f7ff; 
+    color: #fff;
+    border: 3px solid #000;
+}
+
+.card-front {
+    background-color: #1a1a1a; 
+    color: #7eff9a; 
+    transform: rotateY(180deg);
+}
+
+#game-board {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.card-container {
+    height: 120px; 
+    aspect-ratio: 1/1; 
+    cursor: pointer;
+    width: 25%; 
+    padding: 5px; 
+    perspective: 1000px; 
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; 
+    transition: transform 0.6s; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-container.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card-back {
+    background-color: #cdcf4b; 
+    color: #fff;
+    border: 3px solid #000;
+}
+
+.card-front {
+    background-color: #1a1a1a; 
+    color: transparent !important; 
+    font-size: 0 !important; 
+    background-size: 80%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg); 
+}
+
+.card-container[data-symbol="symbol-a"] .card-front {
+    background-image: url('https://img.icons8.com/plasticine/100/cat.png'); 
+}
+
+.card-container[data-symbol="symbol-b"] .card-front {
+    background-image: url('https://img.icons8.com/plasticine/100/dog.png'); 
+}
+
+.card-container[data-symbol="symbol-c"] .card-front {
+    background-image: url('https://img.icons8.com/plasticine/100/panda.png'); 
+}
+
+.card-container[data-symbol="symbol-d"] .card-front {
+    background-image: url('https://img.icons8.com/plasticine/100/rabbit.png'); 
+}
+
+.card-container[data-symbol="symbol-e"] .card-front {
+    background-image: url('https://img.icons8.com/plasticine/100/owl.png'); 
+}
+
+.card-container[data-symbol="symbol-f"] .card-front {
+    background-image: url('https://img.icons8.com/fluency/96/fox.png'); 
+}
+
+/*    Animal - Typing  Challenge */
+body.typing-game-body {
+    background-image: url('assets/typing\ bg-img.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    background-blend-mode: soft-light;
+    color: #444 !important; 
+}
+
+.typing-display {
+    max-width: 800px;
+    height: 150px;
+    background-color: #f7f7f7; 
+    border: 5px solid #ff70a6; 
+    font-size: 1.5rem;
+    line-height: 1.6;
+    overflow-y: hidden;
+    text-align: left;
+}
+
+#phrase-display {
+    margin: 0;
+    padding: 0;
+}
+
+#typing-input {
+    max-width: 800px;
+    font-size: 1.4rem;
+    height: 150px;
+    resize: none; 
+    border: 4px solid #ff9770; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.correct {
+    color: #38a169; 
+    font-weight: bold;
+}
+
+.incorrect {
+    color: white; 
+    background-color: #e53e3e; /* Soft Red */
+    border-radius: 3px;
+    padding: 2px 0;
+}
+
+.current {
+    background-color: #ffda70; 
+    color: #000;
+    border-radius: 2px;
 }
