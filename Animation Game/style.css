@@ -280,3 +280,28 @@ body.typing-game-body {
     color: #000;
     border-radius: 2px;
 }
+
+
+@media (max-width: 600px) {
+    .card-container {
+        height: 100px; 
+    }
+
+    .card-front {
+        background-size: 70% !important; 
+    }
+}
+
+@media (max-width: 400px) {
+     .card-container {
+        height: 80px; 
+    }
+    
+    .card-front {
+        background-size: 60% !important; 
+    }
+}
+
+#game-board {
+    padding: 0 10px;
+}

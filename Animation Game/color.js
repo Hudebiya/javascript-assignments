@@ -3,9 +3,9 @@ var GRID_SIZE = 6;
 var MOVES_LIMIT = 30; 
 
 var COLORS = [
-    '#1a752eff', 
-    '#0c9ca1ff', 
-    '#b11820ff'  
+    '#38d45aff', 
+    '#1ec1c7ff', 
+    '#a33a3fff'  
 ];
 
 var gameGrid = document.getElementById('game-grid');
