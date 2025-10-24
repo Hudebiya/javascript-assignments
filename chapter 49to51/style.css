@@ -1,0 +1,7 @@
+.edit-form-container { 
+            padding: 15px; 
+            margin-top: 20px; 
+            display: none; /* Shuru mein chupa hua */
+            border: 2px solid blue;
+        }
+        table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 8px; }

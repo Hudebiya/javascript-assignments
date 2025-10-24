@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- <div class="container">
+        <h2>Signup Form</h2>
+        <form onsubmit="return handleFormSubmission()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <hr>
+
+        <h3>Submitted Data:</h3>
+        <div id="output">
+            <p>Form data.</p>
+        </div>
+    </div> -->
+    
+   <!-- <div class="item">
+        <h3>Product Item 1</h3>
+        <p><strong>Short Description:</strong> Product 1 </p>
+        
+        <div class="full-details" id="details-1">
+            <p><strong>Full Details:</strong>Product 1 has long lasting battery for 36-38 hours, fine quality display , charger and the best processor.</p>
+        </div>
+
+        <button onclick="toggleDetails('details-1', this)">Read more</button>
+    </div> -->
+
+    <div class="container">
+        <h2>Add Student</h2>
+        <form onsubmit="return addStudent()">
+            <input type="text" id="s-name" placeholder="Name" required>
+            <input type="text" id="s-age" placeholder="Age" required>
+            <button type="submit">Add Student</button>
+        </form>
+        <hr>
+        <h2>Student Records</h2>
+        <table id="studentTable">
+            <thead><tr><th>ID</th><th>Name</th><th>Age</th><th>Actions</th></tr></thead>
+            <tbody></tbody>
+        </table>
+        <div class="edit-form-container" id="editFormContainer">
+            <h3>Edit Student Details</h3>
+            <form onsubmit="return saveChanges()">
+                <input type="hidden" id="edit-id"> 
+                <input type="text" id="edit-name" placeholder="Name" required>
+                <input type="text" id="edit-age" placeholder="Age" required>
+                <button type="submit">Save Changes</button>
+                <button type="button" onclick="document.getElementById('editFormContainer').style.display = 'none';">Cancel</button>
+            </form>
+        </div>
+
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
