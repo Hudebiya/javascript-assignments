@@ -32,15 +32,24 @@
 
 // console.log("Game Over! Your total score is: ${score} out of 5"); 
 
-function on(e){
-    e.src="https://icon2.cleanpng.com/lnd/20250114/hl/4984290bf09cd2619afe1567e202eb.webp"
+// function on(e){
+//     e.src="https://icon2.cleanpng.com/lnd/20250114/hl/4984290bf09cd2619afe1567e202eb.webp"
 
-}
+// }
                  
-function off(e){
-    e.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXsl9-lHR-M-BcavZfEe2KN3PR_Vn7FysVy4kDgTOOwS36TgRLjg6s3E4&s"
+// function off(e){
+//     e.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXsl9-lHR-M-BcavZfEe2KN3PR_Vn7FysVy4kDgTOOwS36TgRLjg6s3E4&s"
     
-}
+// }
+
+//  function checkAddress(fieldId) {
+//     if (document.getElementById(fieldId).value === "") {
+     
+// alert("Email address required.");
+//     }
+//  }
+ 
+
    
 
 
