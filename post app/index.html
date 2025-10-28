@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Goal Tracker </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container my-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-dark mb-2">Mera Maqsad Tracker</h1>
+            <p class="lead text-muted">Apne maqaasid (goals) ko track karein aur progress foran (real-time) update karein.</p>
+        </header>
+
+        <!-- Status Message aur User ID Display -->
+        <div id="status-message" class="alert alert-info border-start border-5 border-info d-none" role="alert">
+            <p class="mb-0 fw-bold">Load ho raha hai...</p>
+        </div>
+        <p class="text-secondary text-center small mb-4">
+            Aapka User ID (Sharing ke liye): <span id="user-id-display" class="font-monospace text-dark fw-bold">...</span>
+        </p>
+
+        <!-- 1. Maqsad Banane Ka Form (CREATE) -->
+        <div class="card shadow-lg mb-5 border-0">
+            <div class="card-body p-4 p-md-5">
+                <h2 class="card-title h3 fw-semibold text-dark mb-4">Naya Maqsad Set Karein</h2>
+                <form id="goal-form">
+                    <!-- Maqsad Ka Naam Input -->
+                    <div class="mb-3">
+                        <label for="goal-title" class="form-label">Maqsad (Maslan, JavaScript Seekhna):</label>
+                        <input type="text" id="goal-title" required placeholder="Apna maqsad likhein..."
+                            class="form-control form-control-lg">
+                    </div>
+
+                    <!-- Progress Input -->
+                    <div class="mb-4">
+                        <label for="goal-progress" class="form-label">Maujooda Progress (%):</label>
+                        <input type="number" id="goal-progress" min="0" max="100" value="0" required 
+                            class="form-control form-control-lg">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-button"
+                        class="btn btn-purple btn-lg w-100 shadow-sm" disabled>
+                        Maqsad Shamil Karein
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 2. Maqsad Dikhane Ka Hissa (READ) -->
+        <div class="mt-5">
+            <h2 class="h3 fw-bold text-dark mb-4 border-bottom pb-2">Aapke Active Maqsad</h2>
+            <div id="goals-container" class="vstack gap-3">
+                <!-- Maqsad yahan JavaScript se daale jayenge -->
+                <p id="no-goals-message" class="text-secondary text-center py-5">
+                    Koi maqsad nahi mila. Apna pehla maqsad set karein!
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal Edit Karne Ke Liye (UPDATE) -->
+    <div id="edit-modal" class="modal-custom">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded-3">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title fw-bold" id="editModalLabel">Maqsad Edit Karein</h5>
+                    <button type="button" class="btn-close" id="cancel-edit-button-x" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="edit-form">
+                        <input type="hidden" id="edit-doc-id">
+                        
+                        <div class="mb-3">
+                            <label for="edit-goal-title" class="form-label">Maqsad Ka Naam:</label>
+                            <input type="text" id="edit-goal-title" required class="form-control">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="edit-goal-progress" class="form-label">Progress Update Karein (%):</label>
+                            <input type="number" id="edit-goal-progress" min="0" max="100" required class="form-control">
+                        </div>
+                        
+                        <div class="d-flex justify-content-end gap-3">
+                            <button type="button" id="cancel-edit-button" class="btn btn-secondary">
+                                Mansookh (Cancel) Karein
+                            </button>
+                            <button type="submit" class="btn btn-purple">
+                                Tabdeeliyan Save Karein
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Aam Paigham (Generic Message) Ke Liye Modal (alert() ki jagah) -->
+    <div id="message-modal" class="modal-custom">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content shadow-lg border-0 rounded-3">
+                <div class="modal-header border-bottom-0">
+                    <h5 id="modal-title" class="modal-title fw-bold">Paigham</h5>
+                    <button type="button" class="btn-close" id="modal-close-button-x" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-content" class="text-secondary">...</p>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button id="modal-close-button" class="btn btn-purple w-100">
+                        Band Karein
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+     
+    <script src="app.js"></script>
+</body>
+</html>
