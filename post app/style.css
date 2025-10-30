@@ -1,23 +1,32 @@
 body {
+  background-color: #f0f2f5;
   font-family: Arial, sans-serif;
-  background-color: rgb(81, 221, 174);
 }
 
-.img-preview {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
+h2, h3 {
+  font-family: "Playfair Display", serif;
+  color: #343a40;
 }
 
 .card {
-  transition: transform 0.2s;
+  border: none;
+  border-radius: 10px;
 }
 
-.card:hover {
-  transform: scale(1.02);
+.card-body {
+  border-radius: 10px;
 }
 
-.badge {
-  font-size: 0.8rem;
+textarea {
+  resize: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
 }

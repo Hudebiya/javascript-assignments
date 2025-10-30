@@ -1,226 +1,87 @@
-var LS_KEY = 'wk_posts_v1';
+// Simple array to store posts
 var posts = [];
 
-var postForm = document.getElementById('postForm');
-var titleInput = document.getElementById('postTitle');
-var bodyInput = document.getElementById('postBody');
-var tagsInput = document.getElementById('postTags');
-var imgInput = document.getElementById('postImage');
-var imgPreview = document.getElementById('imgPreview');
-var imgPreviewWrap = document.getElementById('imgPreviewWrap');
-var titleCount = document.getElementById('titleCount');
-var bodyCount = document.getElementById('bodyCount');
+// Theme colors
+var themes = ['#f8f9fa', '#e3f2fd', '#fff3e0', '#e8f5e9', '#fce4ec'];
+var themeSelect = document.getElementById('themeSelect');
+
+// Add theme options
+for (var i = 0; i < themes.length; i++) {
+  var option = document.createElement('option');
+  option.value = themes[i];
+  option.textContent = themes[i];
+  themeSelect.appendChild(option);
+}
+
+// Get form elements
+var form = document.getElementById('postForm');
+var titleInput = document.getElementById('title');
+var contentInput = document.getElementById('content');
 var postsContainer = document.getElementById('postsContainer');
-var searchInput = document.getElementById('searchInput');
-var sortSelect = document.getElementById('sortSelect');
-var clearAllBtn = document.getElementById('clearAll');
-var editId = document.getElementById('editId');
 
-function saveToStorage() {
-  localStorage.setItem(LS_KEY, JSON.stringify(posts));
-}
-
-function loadFromStorage() {
-  var data = localStorage.getItem(LS_KEY);
-  if (data) posts = JSON.parse(data);
-}
-
-imgInput.addEventListener('change', function () {
-  var file = imgInput.files[0];
-  if (!file) return;
-  var reader = new FileReader();
-  reader.onload = function (e) {
-    imgPreview.src = e.target.result;
-    imgPreviewWrap.classList.remove('d-none');
-  };
-  reader.readAsDataURL(file);
-});
-
-// Form submit
-postForm.addEventListener('submit', function (e) {
+// Handle form submit
+form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  var id = editId.value ? parseInt(editId.value) : Date.now();
-  var title = titleInput.value.trim();
-  var body = bodyInput.value.trim();
-  var tags = tagsInput.value.split(',').map(function (t) { return t.trim(); }).filter(Boolean);
-  var image = imgPreview.src || '';
+  var title = titleInput.value;
+  var content = contentInput.value;
+  var theme = themeSelect.value;
 
-  var existing = posts.find(function (p) { return p.id === id; });
-
-  if (existing) {
-    existing.title = title;
-    existing.body = body;
-    existing.tags = tags;
-    existing.image = image;
-  } else {
-    var post = {
-      id: id,
-      title: title,
-      body: body,
-      tags: tags,
-      image: image,
-      createdAt: Date.now()
-    };
-    posts.unshift(post);
+  if (title === '' || content === '') {
+    alert('Please fill both fields!');
+    return;
   }
 
-  saveToStorage();
+  var post = {
+    id: posts.length + 1,
+    title: title,
+    content: content,
+    theme: theme,
+    createdAt: new Date().toLocaleString()
+  };
+
+  posts.push(post);
+
+  titleInput.value = '';
+  contentInput.value = '';
+
   renderPosts();
-
-  postForm.reset();
-  imgPreviewWrap.classList.add('d-none');
-  editId.value = '';
-  document.querySelector('#postModal .modal-title').textContent = 'New Post';
-  var modal = bootstrap.Modal.getInstance(document.getElementById('postModal'));
-  modal.hide();
 });
 
-titleInput.addEventListener('input', function () {
-  titleCount.textContent = titleInput.value.length + ' / 100';
-});
-bodyInput.addEventListener('input', function () {
-  bodyCount.textContent = bodyInput.value.length + ' / 1000';
-});
-
+// Function to show all posts
 function renderPosts() {
   postsContainer.innerHTML = '';
-  var search = searchInput.value.toLowerCase();
-  var sort = sortSelect.value;
 
-  var list = posts.filter(function (p) {
-    return (
-      p.title.toLowerCase().includes(search) ||
-      p.body.toLowerCase().includes(search) ||
-      (p.tags || []).join(',').toLowerCase().includes(search)
-    );
-  });
+  for (var i = 0; i < posts.length; i++) {
+    var post = posts[i];
 
-  if (sort === 'title') {
-    list.sort(function (a, b) { return a.title.localeCompare(b.title); });
-  } else if (sort === 'oldest') {
-    list.sort(function (a, b) { return a.createdAt - b.createdAt; });
-  } else {
-    list.sort(function (a, b) { return b.createdAt - a.createdAt; });
-  }
-
-  list.forEach(function (p) {
     var col = document.createElement('div');
-    col.className = 'col-md-6 col-lg-4 mb-4';
+    col.className = 'col-md-6 col-lg-4';
 
     var card = document.createElement('div');
     card.className = 'card shadow-sm h-100';
+    card.style.backgroundColor = post.theme;
 
     var cardBody = document.createElement('div');
-    cardBody.className = 'card-body d-flex justify-content-between';
-
-    var left = document.createElement('div');
-    left.className = 'flex-grow-1 me-3';
+    cardBody.className = 'card-body';
 
     var h5 = document.createElement('h5');
-    h5.textContent = p.title;
+    h5.className = 'card-title';
+    h5.textContent = post.title;
 
-    var meta = document.createElement('small');
-    meta.className = 'text-muted d-block mb-2';
-    meta.textContent = new Date(p.createdAt).toLocaleString();
+    var p = document.createElement('p');
+    p.className = 'card-text';
+    p.textContent = post.content;
 
-    var bodyP = document.createElement('p');
-    bodyP.textContent = p.body.length > 80 ? p.body.slice(0, 80) + '...' : p.body;
+    var small = document.createElement('small');
+    small.className = 'text-muted';
+    small.textContent = 'Created at: ' + post.createdAt;
 
-    var tagWrap = document.createElement('div');
-    (p.tags || []).forEach(function (t) {
-      var span = document.createElement('span');
-      span.className = 'badge bg-secondary me-1';
-      span.textContent = t;
-      tagWrap.appendChild(span);
-    });
-
-    var actions = document.createElement('div');
-    actions.className = 'mt-3 d-flex gap-2';
-
-    var viewBtn = document.createElement('button');
-    viewBtn.className = 'btn btn-sm btn-outline-primary';
-    viewBtn.textContent = 'View';
-    viewBtn.onclick = function () { openView(p); };
-
-    var editBtn = document.createElement('button');
-    editBtn.className = 'btn btn-sm btn-outline-secondary';
-    editBtn.textContent = 'Edit';
-    editBtn.onclick = function () { openEdit(p.id); };
-
-    var delBtn = document.createElement('button');
-    delBtn.className = 'btn btn-sm btn-outline-danger';
-    delBtn.textContent = 'Delete';
-    delBtn.onclick = function () { deletePost(p.id); };
-
-    actions.append(viewBtn, editBtn, delBtn);
-    left.append(h5, meta, bodyP, tagWrap, actions);
-    cardBody.append(left);
-
-    if (p.image) {
-      var imgCol = document.createElement('div');
-      imgCol.style.width = '140px';
-      var img = document.createElement('img');
-      img.src = p.image;
-      img.className = 'img-preview ms-auto';
-      img.alt = 'post image';
-      imgCol.appendChild(img);
-      cardBody.append(imgCol);
-    }
-
+    cardBody.appendChild(h5);
+    cardBody.appendChild(p);
+    cardBody.appendChild(small);
     card.appendChild(cardBody);
     col.appendChild(card);
     postsContainer.appendChild(col);
-  });
-}
-
-function openEdit(id) {
-  var p = posts.find(function (x) { return x.id === id; });
-  if (!p) return;
-  editId.value = p.id;
-  titleInput.value = p.title;
-  bodyInput.value = p.body;
-  tagsInput.value = (p.tags || []).join(', ');
-  if (p.image) {
-    imgPreview.src = p.image;
-    imgPreviewWrap.classList.remove('d-none');
-  } else {
-    imgPreview.src = '';
-    imgPreviewWrap.classList.add('d-none');
   }
-  titleCount.textContent = titleInput.value.length + ' / 100';
-  bodyCount.textContent = bodyInput.value.length + ' / 1000';
-  document.querySelector('#postModal .modal-title').textContent = 'Edit Post';
-  var modal = new bootstrap.Modal(document.getElementById('postModal'));
-  modal.show();
 }
-
-function deletePost(id) {
-  if (!confirm('Delete this post?')) return;
-  posts = posts.filter(function (p) { return p.id !== id; });
-  saveToStorage();
-  renderPosts();
-}
-
-function openView(post) {
-  var date = new Date(post.createdAt).toLocaleString();
-  var txt = post.title + '\n\n' + post.body + '\n\nTags: ' +
-    (post.tags || []).join(', ') + '\nCreated: ' + date;
-  alert(txt);
-}
-
-searchInput.addEventListener('input', function () { renderPosts(); });
-sortSelect.addEventListener('change', function () { renderPosts(); });
-clearAllBtn.addEventListener('click', function () {
-  if (confirm('Clear ALL posts? This cannot be undone.')) {
-    posts = [];
-    saveToStorage();
-    renderPosts();
-  }
-});
-
-function init() {
-  loadFromStorage();
-  renderPosts();
-}
-init();
