@@ -1,20 +1,16 @@
 body {
   background-color: #f0f2f5;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
-h2, h3 {
-  font-family: "Playfair Display", serif;
+h2 {
+  font-family: 'Playfair Display', serif;
   color: #343a40;
 }
 
 .card {
+  border-radius: 12px;
   border: none;
-  border-radius: 10px;
-}
-
-.card-body {
-  border-radius: 10px;
 }
 
 textarea {
@@ -24,9 +20,34 @@ textarea {
 .btn-primary {
   background-color: #007bff;
   border: none;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
 .btn-primary:hover {
   background-color: #0056b3;
+}
+
+.card-body {
+  border-radius: 10px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  .card {
+    padding: 1rem;
+  }
+  .btn-primary {
+    font-size: 0.9rem;
+  }
 }
