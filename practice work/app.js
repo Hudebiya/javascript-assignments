@@ -49,6 +49,27 @@
 //     }
 //  }
  
+// var container = document.getElementById("list");
+
+// function showList() {
+//   var list = `
+//     <ul>
+//         <li>Karachi</li>
+//         <li>Hyderabad</li>
+//         <li>Lahore</li>
+//         <li>Islamabad</li>
+//     </ul>
+
+//       <button onclick="hideList()" >Hide List</button>
+
+//      `;
+
+//   container.innerHTML = list;
+// }
+
+// function hideList() {
+//   container.innerHTML = "";
+// }
 
    
 
