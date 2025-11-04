@@ -1,5 +1,12 @@
 //       PRACTICE WORK
 
+// document.querySelectorAll(".close-btn").forEach(btn => {
+//   btn.onclick = function() {
+//     this.parentElement.style.display = "none";
+//   };
+// });
+
+
 // var today=new Date(); 
 // var targetDate=new Date("2/18/2026");
 // var diff = targetDate - today;
