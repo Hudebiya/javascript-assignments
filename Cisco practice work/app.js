@@ -29,8 +29,48 @@
 
 // var names= ["Olivia", "Emma", "Mateo", "Samuel"];
 // console.log(names.length); // -> 4
-   
 // var name = names.pop();
 // console.log(names.length); // -> 3
 // console.log(name); // -> Samuel
 // console.log(names); // -> ["Olivia", "Emma", "Mateo"]
+
+//   4. SHIFT
+
+// var names = ["Olivia", "Emma", "Mateo", "Samuel"];
+// console.log(names.length); // -> 4
+// var name = names.shift();
+// console.log(names.length); // -> 3
+// console.log(name); // -> Olivia
+// console.log(names); // -> ["Emma", "Mateo", "Samuel"]
+
+//   5. UNSHIFT
+
+// var names  =  ["Olivia",  "Emma",  "Mateo",  "Samuel"];
+// console.log(names.indexOf("Mateo"));  //  ->  2
+// console.log(names.indexOf("Victor"));  //  ->  -1
+// var names = names.unshift();
+// console.log(names.length);  //  ->  4
+// console.log(name);  // ->  Amelia
+// console.log(names);  // ->  ["Amelia",  "Olivia",  "Emma",  "Mateo",  "Samuel"]
+
+//   REVERSE
+
+// var names = ["Olivia", "Emma", "Mateo", "Samuel"];
+// names.reverse();
+// console.log(names); // -> ["Samuel", "Mateo", "Emma", "Olivia"]
+
+//   SLICE
+
+// var names = ["Olivia", "Emma", "Mateo", "Samuel"];
+// var n1 = names.slice(2);
+// console.log(n1); // -> ["Mateo", "Samuel"]
+// var n2 = names.slice(1,3);
+// console.log(n2); // -> ["Emma", "Mateo"]
+// var n3 = names.slice(0, -1);
+// console.log(n3); // -> ["Olivia", "Emma", "Mateo"]
+// var n4 = names.slice(-1);
+// console.log(n4); // -> ["Samuel"]
+// console.log(names); // -> ["Olivia", "Emma", "Mateo", "Samuel"]
+
+
+
