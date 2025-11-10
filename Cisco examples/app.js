@@ -83,3 +83,136 @@ console.log("division: ", x / y); // -> 2.5
 console.log("division remainder :", x % y); // -> 1
 console.log("exponent: ", x ** y); // -> 25 */
 
+/*    ALERT
+
+alert("Hello, World!")
+window.alert("Hello, World! for the second time");
+alert(4 * 7);
+alert(true);
+alert("text 1", "text 2"); // only "text 1" will be displayed  */
+
+/*    IF / ELSE Statement
+
+var isUserReady = confirm("Are you ready?");
+if (isUserReady) {
+    console.log("User ready!");
+} else {
+    console.log("User not ready!");
+}  */
+
+/*   ELSE IF STATEMENT
+
+var number = prompt("Enter a number", 0);
+if (number < 10) {
+    alert("<10");
+} else if (number < 30) {
+    alert("<30");
+} else if (number < 60) {
+    alert("<60");
+} else if (number < 90) {
+    alert("<90");
+} else if (number < 100) {
+    alert("<100");
+} else if (number == 100) {
+    alert("100")
+} else {
+    alert(">100")
+}  */
+
+/*  SWITCH  STATEMENT
+
+var gate = prompt("Choose gate: a, b, or c");
+var win = false;
+switch (gate) {
+    case "a":
+        alert("Gate A: empty");
+        break;
+    case "b":
+        alert("Gate B: main prize");
+        win = true;
+        break;
+    case "c":
+        alert("Gate C: empty");
+        break;
+    default:
+        alert("No gate " + String(gate));
+}
+if (win) {
+    alert("Winner!");
+}   */
+
+/*  WHILE  LOOP
+
+var isOver = false;
+var counter = 1;
+while (!isOver) {
+    isOver = !confirm(`[${counter++}] Continue the loop?`);
+}  */
+
+/*   DO  WHILE  LOOP
+
+var condition = false;
+while (condition) {
+    console.log("A while loop iteration."); // never executed
+}
+do {
+    console.log("A do ... while loop iteration."); // executed once
+} while (condition);  */
+
+/*    LOOP
+
+var values = [10, 30, 50, 100];
+var sum = 0;
+for (let i = 0; i < 4; i++) {
+    sum += values[i];
+}
+console.log(sum); // -> 190  */
+
+/*  2nd  EXAMPLE
+var values = [10, 30, 50, 100];
+for (let i = 0; i < values.length; i++) {
+    console.log(values[i]); // -> 10, 30, 50, 100
+}
+for (let i = values.length - 1; i > 0; i--) {
+    console.log(values[i]); // -> 100, 50, 30, 10
+}
+for (let i = 0; i < values.length; i += 2) {
+    console.log(values[i]); // -> 10, 50
+}  */
+
+/*  SWITCH  STATEMENT
+
+var gate = prompt("Choose gate: a, b, or c");
+var win = false;
+switch (gate) {
+    case "a": {
+        let message = "Gate A";
+        console.log(message);
+        break;
+    }
+    case "b": {
+        let message = "Gate B";
+        console.log(message);
+        break;
+    }
+    case "c": {
+        let message = "Gate C";
+        console.log(message);
+        break;
+    }
+    default:
+        alert("No gate " + String(gate));
+}
+if (win) {
+    alert("Winner!");
+}   */
+
+
+
+
+
+
+
+
+
+
