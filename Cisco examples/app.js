@@ -244,6 +244,88 @@ function getMeanTemp(temperatures) {
 console.log(getMeanTemp(10));       // -> NaN
 console.log(getMeanTemp([10, 30])); // -> 20   */
 
+ /*   TRY . . .  CATCH STATEMENT 
+
+try {
+    let a = b;
+} catch (error) {
+    console.log("Caught " + error); // -> Caught ReferenceError: b is not defined
+}
+console.log("We handled the exception!"); // -> we handled the exception!  
+
+
+let a = -2;
+try {
+    a = b;
+} catch (error) {
+    if (error instanceof ReferenceError) {
+        console.log("Reference error, reset a to -2"); // -> Reference error, reset a to -2
+        a = -2;
+    } else {
+        console.log("Other error - " + error);
+    }
+}
+console.log(a); // -> -2  */
+
+/*  FINALLY STATEMENT 
+
+let a = 10;
+try {
+    a = 5;
+} finally {
+    console.log(a); // -> 5
+}
+console.log(a); // -> 5
+
+
+let a = 10;
+try {
+    a = b;  // ReferenceError
+} catch (error) {
+    console.log("An Error!"); // -> An Error!
+} finally {
+    console.log("Finally!"); // -> Finally!
+}
+console.log(a); // -> 10  
+
+let a = 10;
+try {
+    a = b; // First ReferenceError
+} catch (error) {
+    try {
+        console.log(b); // Second ReferenceError
+    } catch {
+        console.log("Second catch!"); // -> Second catch!
+    }
+} finally {
+    console.log("Finally!"); // -> Finally!
+}  */
+
+/*   THROW STATEMENT 
+
+Function factorial(n) {
+    if (n > 20) {
+        throw new RangeError("Max value 20");
+    }
+    let result = 1;
+    for (; n > 1; n--) {
+        result = result * n;
+    }
+    return result;
+}
+console.log(factorial(20)); // -> 2432902008176640000
+console.log(factorial(1000)); // -> Uncaught RangeError: Max value 20  */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
