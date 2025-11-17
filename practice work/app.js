@@ -111,6 +111,60 @@ if (userMarks >= 90) {
     alert("Fail");
 }           //    if … else and else if Statements   */
 
+/* var userAge = 18;
+var userMembership = true;
+if (userAge>=18 && userMembership === true){
+    alert("You can join the club");
+} else{
+    alert("Access denied");
+}                     //  Testing Sets of Conditions ( &&  , ||)       */
+
+/* var hasMoney = prompt("Do you have money? (yes/no)");
+if (hasMoney === "yes") {
+    var flavour = prompt("Which flavour do you want? (chocolate/vanilla)");
+    
+    if (flavour === "chocolate") {
+        alert("Here is your chocolate ice cream!");
+    } else {
+        alert("Here is your vanilla ice cream!");
+    }
+} else {
+    alert("You need money to buy ice cream!");
+}
+
+var temp = Number(prompt("Enter current temperature:"));
+if (temp > 30) {
+    if (temp >= 40) {
+        alert("It's very hot");
+    } else {
+        alert("It's warm");
+    }
+} else {
+    alert("It's cold");
+}                //  Nested IF                  */
+
+/* var items = ["Bread", "Milk", "Eggs"];
+alert(items.length);
+items.push("Juice");
+console.log(items);
+items.unshift("Butter");
+console.log(items);
+items.pop();
+console.log(items);
+items.shift();
+console.log(items);
+items.splice(2,0,"Cheese");
+console.log(items);             //   Array       */
+
+/* for (var i = 1; i <= 10; i++){
+    console.log(i);
+}   */
+
+
+
+
+
+
 
 
 
