@@ -158,9 +158,68 @@ console.log(items);             //   Array       */
 
 /* for (var i = 1; i <= 10; i++){
     console.log(i);
-}   */
+}   
 
+var names = ["Ali", "Sara", "John", "Aisha"];
+for (var i = 0; i < names.length; i++) {
+    console.log(names[i]);
+}    
 
+var num = +prompt("Enter your number:");
+for (var i =1; i<=10; i++ ){
+    console.log(num + "x" + i + "=" + (num*i));
+}       //    Loop         */
+
+/* var items = ["Bread", "Milk", "Eggs", "Juice", "Butter"];
+var userItem = prompt("Enter item name:");
+var found = false;
+
+for (var i = 0; i < items.length; i++) {
+    if (items[i] === userItem) {
+        found = true;
+        break;
+    }
+}
+if (found === true) {
+    alert("Item is available!");
+} else {
+    alert("Item not found!");
+}        //    Flag (Boolean)      */
+        
+/* for (var roomNum = 1; roomNum <=3; roomNum++){
+    console.log("Room: " + roomNum);
+    for (var chairNum =1; chairNum <=4; chairNum++){
+        console.log("  Chair: " + chairNum);
+    }  
+}     // Nested Loop        */
+
+/* var cityName = prompt("Enter your City name:");
+alert(cityName.toLowerCase());  // lowercase
+alert(cityName.toUpperCase());   // uppercase         */
+
+/* var userWord = prompt("Enter your word:");
+alert("Length: " + userWord.length);
+alert("First Part (0 to 5): " + userWord.slice(0, 5));
+alert("Second Part (5 to 10): " + userWord.slice(5, 10));   //  String Length & Extracting Parts  */
+
+/* var userSen = prompt("Enter your Sentence:");
+var userWord = prompt("Enter your Word:");
+if (userSen.indexOf(userWord) !== -1) {
+    alert("Letter found!");
+} else {
+    alert("Letter not found!");
+}           //    IndexOf        */
+
+/* var userWord = prompt("Enter your Word:");
+var index = +prompt("Enter index of a word:")
+alert(userWord.charAt(index));      //  CharAt       */
+
+/* var sentence = prompt("Enter one line sentence:");
+var userWord = prompt("Enter the word you want to replace:");
+var wordRep = prompt("Enter the new word:");
+
+var newText = sentence.replace(userWord, wordRep);
+alert(newText);    // Replace Method     */
 
 
 
