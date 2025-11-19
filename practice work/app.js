@@ -221,6 +221,29 @@ var wordRep = prompt("Enter the new word:");
 var newText = sentence.replace(userWord, wordRep);
 alert(newText);    // Replace Method     */
 
+/* var num = +prompt("Enter your decimal number:");
+alert("Math.round = " + Math.round(num));
+alert("Math.floor = " + Math.floor(num));
+alert("Math.ceil = " + Math.ceil(num));        //   Round, Floor, Ceil  Number         */
+
+/* var num = +prompt("Enter your number 1 to 100:");
+var randomNum = Math.floor(Math.random() * 100) + 1;
+alert("Random number is: " + randomNum);       //   Random Number    */
+
+/* var firstNum = parseInt(prompt("Enter your Number:"));
+var secondNum = parseInt(prompt("Enter your Number:"));
+alert(firstNum + secondNum);
+alert(firstNum - secondNum);
+alert(firstNum * secondNum);
+alert(firstNum / secondNum);      //   Convert String → Number        */
+
+/* var userAge = Number(prompt("Enter your Age:"));
+var message = "you Age is: " + userAge.toString();
+alert(message);      // Converting Strings to Numbers, & Numbers to Strings              */
+
+var userNum = parseFloat(prompt("Enter your number"));
+alert("Your number of Two decimal is "+ userNum.toFixed(2));
+alert("Your number of four decimal is "+ userNum.toFixed(4));
 
 
 
