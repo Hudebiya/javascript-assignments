@@ -241,9 +241,24 @@ alert(firstNum / secondNum);      //   Convert String → Number        */
 var message = "you Age is: " + userAge.toString();
 alert(message);      // Converting Strings to Numbers, & Numbers to Strings              */
 
-var userNum = parseFloat(prompt("Enter your number"));
+/* var userNum = parseFloat(prompt("Enter your number"));
 alert("Your number of Two decimal is "+ userNum.toFixed(2));
-alert("Your number of four decimal is "+ userNum.toFixed(4));
+alert("Your number of four decimal is "+ userNum.toFixed(4));     // to Fixed            */
+
+/* var now = new Date();
+alert("Hello Hu it's a new Time  " + now);     // New Date and Time                   */
+
+/* var birthday = prompt("Enter your birthday (like: June 25, 2005)");
+var birthDate = new Date(birthday);
+var examYear = +prompt("Enter exam year:");
+var examMonth = +prompt("Enter exam month (1-12):") - 1; 
+var examDay = +prompt("Enter exam day:");
+var examDate = new Date(examYear, examMonth, examDay);
+var meeting = prompt("Enter meeting date & time (like 2025-11-19 14:30:00)");
+var meetingDate = new Date(meeting);
+alert("Birthday: " + birthDate);
+alert("Exam Date: " + examDate);
+alert("Meeting Date: " + meetingDate);                            */
 
 
 
