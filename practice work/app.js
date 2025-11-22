@@ -260,6 +260,17 @@ alert("Birthday: " + birthDate);
 alert("Exam Date: " + examDate);
 alert("Meeting Date: " + meetingDate);                            */
 
+/* var userDate = new Date();
+userDate.setFullYear(2030);
+userDate.setMonth(11);
+userDate.setDate(25);
+alert("Updated Full Year:\n" + userDate);    //  Set Time And Date             */
+
+/* function showMessage(){
+   alert("Welcome to my website!");
+}
+showMessage();       // Function                    */
+
 
 
 
