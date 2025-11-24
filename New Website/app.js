@@ -121,6 +121,7 @@ var beautyProducts = {
         Description:" Dove Shea Butter Beauty Bar with shea & vanilla scent gives your skin a warm lather for a pampering cleanse",
       },
     },
+
     Sunsilk: {
     "Sunsilk Shampoo": {
         Name: "Sunsilk Stunning Black Shine Shampoo",
@@ -144,23 +145,175 @@ var beautyProducts = {
         Description:"Sunsilk Lusciously Thick & Long shampoo provides hair with essential nutrients to give you long-lasting volume",
       },
     },
-    Pantene: {},
+
+    "L'Oreal Paris": {
+      "L'Oreal Paris": {
+        Name: "L'Oreal Paris Elvive Total Repair",
+        price: 1200,
+        src: "https://m.media-amazon.com/images/I/71Er4Rss1LL._SX425_.jpg",
+        vol: 500,
+        Description:"L'Oreal Paris Elvive Total Repair 5 Repairing Shampoo for Damaged Hair Shampoo with Protein and Ceramide.",
+      },
+      "LOreal Paris Age Perfect": {
+        Name: "LOreal Paris Age Perfect Cell Renewal Anti-Aging Day Moisturizer Sunscreen",
+        price: 2000,
+        src: "https://m.media-amazon.com/images/I/51qXFoZedGL._SX425_.jpg",
+        vol: 200,
+        Description:"LOreal Paris Perfect Anti-Aging Day Moisturizer with Broad Spectrum SPF 25 Sunscreen,Antioxidants and Vitamin E",
+      },
+      "L'Oreal Paris Face Moisturizer": {
+        Name: "L'Oreal Paris Collagen Daily Face Moisturizer",
+        price: 1500,
+        src: "https://m.media-amazon.com/images/I/71jTuSY+xSL._SX425_.jpg",
+        vol: 200,
+        Description:"L'Oreal Paris Collagen Daily Face Moisturizer,Anti Aging Face Cream to Reduce Wrinkles and Provide Intense Hydration",
+      },
+    },
   },
 
   Makeup: {
-    Maybelline: {},
-    "Huda Beauty": {},
-    "MAC Cosmetics": {},
-    NYX: {},
-    Revlon: {}
-  },
+    Maybelline: {
+      "Maybelline Fit Me Matte": {
+        Name: "Maybelline Fit Me Matte", 
+        price: 2200,
+        src: "https://m.media-amazon.com/images/I/81GXjEwGRPL._SX425_.jpg",
+        vol: 50,
+        Description:"Maybelline Fit Me Matte + Poreless Pressed Face Powder Makeup & Setting Powder,Translucent,1 Count",
+      },
+      "Maybelline Oil Balm": {
+        Name: "Maybelline Lifter Glaze Oil Balm",
+        price: 2500,
+        src: "https://images-na.ssl-images-amazon.com/images/I/61vSkDGy7cL._AC_UL232_SR232,232_.jpg",
+        vol: 69.6,
+        Description:"Glaze lips in melty goodness with Maybelline's Lifter Glaze.A hydrating oil balm that leaves lips so smooth and glowy",
+      },
+      "Maybelline Lip Tint": {
+        Name: "Maybelline Super Stay Teddy Lip Tint",
+        price: 2300,
+        src: "https://m.media-amazon.com/images/I/71L-569qfBL._SX425_.jpg",
+        vol: 60,
+        Description:"Maybelline Super Stay Teddy Lip Tint,Long Lasting Matte Lipstick For Up To 12HR Wear, Kneehigh,1 Count",
+      },
+    },
+    "Huda Beauty": {
+      "Huda Beauty Eyeshadow Palette": {
+        Name: "Huda Beauty Obsessions Eyeshadow Palette",
+        price: 5000,
+        src: "https://m.media-amazon.com/images/I/81uohdbp1ML._SX425_.jpg",
+        vol: 400,
+        Description:"It is a range of compact eyeshadow palettes,expertly curated by Huda herself,offering beauty lovers a complete day-to-night eye color wardrobe",
+      },
+      "Huda beauty Foundation": {
+        Name: "HUDA BEAUTY FauxFilter Foundation",
+        price: 7500,
+        src: "https://m.media-amazon.com/images/I/51YwG58Bi8L._SX425_.jpg",
+        vol: 400,
+        Description:"A full-coverage cream foundation that visibly conceals blemishes and imperfections,for a filter-like finish.",
+      },
+      "HUDA BEAUTY Liquid Matte Lipstick": {
+        Name: "HUDA BEAUTY Liquid Matte Lipstick",
+        price: 750,
+        src: "https://m.media-amazon.com/images/I/51a+20FguvL._SX425_.jpg",
+        vol: 150,
+        Description:"HUDA BEAUTY Liquid Matte Ultra-Comfort Transfer-proof Lipstick Perfectionist",
+      },
+    },
+    "MAC Cosmetics": {
+      "MAC Golden Mini Brush Kit": {
+        Name: "MAC Golden Touch Mini Brush Kit",
+        price: 5500,
+        src: "https://m.media-amazon.com/images/I/61ckmP+G7DL._SX425_.jpg",
+        vol: 5,
+        Description:"A holiday-exclusive gift set with four makeup brushes for face and eyes in travel-friendly sizes at a gold star value.",
+      },
+      "MAC Studio Fix Fluid": {
+        Name: "MAC Studio Fix Fluid",
+        price: 7000,
+        src: "https://m.media-amazon.com/images/I/51FuGk9zylL._SX425_.jpg",
+        vol: 120,
+        Description:"MAC Studio Fix Fluid Foundation SPF 15 is a modern foundation with a natural matte finish and broad spectrum protection.",
+      },
+      "Matte Liquid Lipstick Makeup Set": {
+        Name: "6Pcs Matte Liquid Lipstick Makeup Set",
+        price: 8500,
+        src: "https://m.media-amazon.com/images/I/61YVyDv6rbL._SX425_.jpg",
+        vol: 150,
+        Description:"6 Colors Velvet Liquid Lip Stick Set, full-size lip gloss of the most popular colors.",
+      },
+    },
+   },
 
   Fragnance: {
-    "Victoria's Secret": {},
-    Channel: {},
-    Dior: {},
-    Gucci: {}
-  }
+    Channel: {
+      "Chance by Chanel for Women": {
+        Name: "Chance by Chanel for Women",
+        price: 10000,
+        src: "https://m.media-amazon.com/images/I/61KC5KN9e4L._AC_SX569_.jpg",
+        vol: 35,
+        Description:"Chance by Chanel is a blend of fresh floral notes merged with sensual, sweet and spicy notes.",
+      },
+      "Coco Mademoiselle Eau De Parfum": {
+        Name: "Coco Mademoiselle Eau De Parfum",
+        price: 15000,
+        src: "https://m.media-amazon.com/images/I/81QCVW4SJyL._SX425_.jpg",
+        vol: 1.5,
+        Description:"An intense new facet of the COCO MADEMOISELLE personality emerges to forge a powerful,deep,addictive fragrance.",
+      },
+      "Chanel Bleu De Chanel Men": {
+        Name: "Chanel Bleu De Chanel Men",
+        price: 12500,
+        src: "https://m.media-amazon.com/images/I/51xBvROIBLL._SY450_.jpg",
+        vol:  1.7,
+        Description:"Chanel Bleu de Chanel Eau de Parfum Spray Sample Vial. 1.5ml/0.05oz",
+      },
+    },
+    Dior: {
+    "Dior Sauvage Eau de Toilette Splash Mini": {
+      Name: "Dior Sauvage Eau de Toilette Splash Mini for Men",
+      price: 15500,
+      src: "https://m.media-amazon.com/images/I/51-5E7ihv5L._SX425_.jpg",
+      vol: 100,
+      Description:"Sauvage Eau de Parfum by Dior is a Amber Fougere fragrance for men.",
+      },
+    "Dior Miss Dior Blooming Bouquet": {
+      Name: "Dior Miss Dior Blooming Bouquet for Women Eau de Toilette Splash",
+      price: 18000,
+      src: "https://m.media-amazon.com/images/I/710QVh04FKL._SX425_.jpg",
+      vol: 5,
+      Description:"MISS DIOR PERFUME 0.17 OUNCE-A luxurious mini edition of the iconic Miss Dior fragrance.",
+      },
+    "Christian Dior Women's Poison": {
+      Name: "Christian Dior Women's Poison Eau de Toilette Spray",
+      price: 17000,
+      src: "https://m.media-amazon.com/images/I/510cgmpZm8L._SX425_.jpg",
+      vol: 1.7,
+      Description:"Poison Eau De Toilette Spray 3.4 Oz/ 100 Ml for Women by Christian Dior",   
+      },
+    },
+    Gucci: {
+    "Gucci Bloom for Women Parfum":{
+      Name: "Gucci Bloom for Women Eau de Parfum Spray",
+      price: 20000,
+      src: "https://m.media-amazon.com/images/I/7134Ds7j4dL._SX425_.jpg",
+      vol: 3.3,
+      Description:"Gucci Bloom is created to unfold like its name,rich scent of a thriving garden filled with an abundance of flowers.",
+      },
+    "Gucci Guilty by Gucci for Men": {
+      Name: "Gucci Guilty by Gucci for Men 2.0 oz Elixir de Parfum Spray",
+      price: 18000,
+      src: "https://m.media-amazon.com/images/I/51O1SlN3AmL._SY606_.jpg",
+      vol: 3.4 ,
+      Description:"Gucci Guilty by Gucci for Men 2.0 oz Elixir de Parfum Spray",
+     },
+    "Gucci Flora Gorgeous Jasmine": {
+      Name: "Gucci Flora Gorgeous Jasmine Eau de Parfum Pen Spray",
+      price: 14000,
+      src: "https://m.media-amazon.com/images/I/7126CYV00CL._SX425_.jpg",
+      vol: 0.33,
+      Description:"Gucci Flora Gorgeous Jasmine Eau de Parfum Pen Spray,a captivating fragrance housed in a convenient 0.33 oz(10 ml)pen spray.",
+     },
+    },
+  },
 };
 
 var productMenu = document.getElementById("productMenu");

@@ -2,7 +2,7 @@
       font-family: "Roboto", sans-serif;
 }
 body {
-  background-color: #fce4ec;
+  background-color: #F5D3C4;
 }
 .card img {
   height: 250px;
@@ -16,7 +16,7 @@ body {
   overflow-y: hidden;
 }
 .navbar {
-  background-color: #f48fb1;
+  background-color: #B77466;
 }
 .navbar-brand {
   color: #fce4ec;
@@ -34,14 +34,14 @@ body {
   padding: 0;
 }
 .card-title, .price{
- color: #f48fb1;
+ color: #B77466;
 }
 .card-text{
-    color: #607d8b
+    color: #662222;
 ;
 }
 .card-img-top{
-    border-bottom: 1px solid #fce4ec ;
+    border-bottom: 1px solid #FDE7B3 ;
 }
 .btn-outline-success{
     color:#fce4ec ; 
