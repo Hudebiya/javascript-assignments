@@ -269,7 +269,58 @@ alert("Updated Full Year:\n" + userDate);    //  Set Time And Date             *
 /* function showMessage(){
    alert("Welcome to my website!");
 }
-showMessage();       // Function                    */
+showMessage();                 // Function                    */
+
+/* function subtract(a,b) {
+    return a-b;
+}
+var result = subtract(16,4);
+alert(result);              //    return in function              */
+
+/* var country = "Pakistan";
+function showInfo(){
+    var city = "Karachi";
+    alert("I live in "+ city + "," + country);
+}
+ showInfo();          //  Global ab=nd Local variables             */
+
+/* var userChoice = prompt("Enter your favourite Fruit Name").toLowerCase();
+switch(userChoice){
+    case "apple":
+        alert("Red fruit");
+        break;
+
+    case "banana":
+        alert("Yellow fruit");
+        break;
+
+    case "grapes":
+        alert("Green fruit");
+        break;
+
+    default:
+        alert("Fruit not available");
+}                                 //     Switch Case               */
+
+/* var userPet = prompt("Enter your favourite animal or pet:").toLowerCase();
+switch(userPet){
+    case "cat":
+        alert("It is a pet animal");
+        break;
+
+    case "lion":
+        alert("It is a wild animal");
+        break;
+
+    case "cow":
+        alert("It gives milk");
+        break;
+
+    default:
+        alert("Animal not found");
+}                    //   Switch statements                    */
+
+
 
 
 
