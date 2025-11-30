@@ -1,4 +1,4 @@
-                 // Palindrome Checker
+                     // Palindrome Checker
 
 function checkPalindrome() {
 
@@ -12,11 +12,24 @@ function checkPalindrome() {
   }
 
   if (word === "") {
-    alert("⚠️ Please enter a word!");
+    Swal.fire({
+      icon: "warning",
+      title: "Empty!",
+      text: "Please enter a word!"
+    });
   }
   else if (word === reversed) {
-    alert("✅ Palindrome!");
-  } else {
-    alert("❌ Not a palindrome.");
+    Swal.fire({
+      icon: "success",
+      title: "Palindrome!",
+      text: `"${word}" is a palindrome`
+    });
+  } 
+  else {
+    Swal.fire({
+      icon: "error",
+      title: "Not a Palindrome!",
+      text: `"${word}" is not a palindrome`
+    });
   }
 }
