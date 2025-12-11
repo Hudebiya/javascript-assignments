@@ -320,6 +320,18 @@ switch(userPet){
         alert("Animal not found");
 }                    //   Switch statements                    */
 
+/* var i = 1;
+while (i <= 5) {
+    console.log("Number: " + i);
+    i++;
+}                                    //    While Loop                */
+                                    
+/* var num = 10;
+do {
+    console.log("Running...");
+    num--;
+} while (num > 8);                  // Do-While Loop                 */
+
 
 
 
