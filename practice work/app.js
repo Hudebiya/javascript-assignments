@@ -332,6 +332,15 @@ do {
     num--;
 } while (num > 8);                  // Do-While Loop                 */
 
+/* function showText() {
+    document.getElementById("para").style.display = "block";
+}                       //   Events Link                 */
+
+/* function changeText() {
+    document.getElementById("text").innerHTML = "Text Updated!";
+}                       // Buttons onClick               */
+
+
 
 
 
