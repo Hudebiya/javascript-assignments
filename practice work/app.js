@@ -340,6 +340,24 @@ do {
     document.getElementById("text").innerHTML = "Text Updated!";
 }                       // Buttons onClick               */
 
+/* function readText() {
+    let text = document.getElementById("para").innerHTML;
+    alert(text);
+}                        //  Reading and Setting Paragraph Text           */
+
+/* function resize() {
+     document.getElementById("img").style.width = "450px";
+}                       //  Manipulating Images and Text               */
+
+/* function change() {
+    document.getElementById("pic").src = "https://www.freeiconspng.com/thumbs/lightbulb-png/light-bulb-png-bulb-png1247-12.png";
+}
+function back() {
+    document.getElementById("pic").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsc6P5r56SW4StRcTL3Cfx_m5T5SG9KKVh3Q&s";
+}                      //    Swapping Images                      */  
+
+
+
 
 
 
