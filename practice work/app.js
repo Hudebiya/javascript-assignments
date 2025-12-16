@@ -356,6 +356,14 @@ function back() {
     document.getElementById("pic").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsc6P5r56SW4StRcTL3Cfx_m5T5SG9KKVh3Q&s";
 }                      //    Swapping Images                      */  
 
+/* function bg() {
+    document.getElementById("box").style.backgroundColor = "yellow";
+}                     //      Setting Styles                    */
+
+/* function change() {
+    document.getElementById("msg").innerHTML = "Hello DOM";
+}                           // Document Object Module (DOM)                  */
+
 
 
 
