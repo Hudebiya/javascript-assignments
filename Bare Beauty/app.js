@@ -168,10 +168,12 @@ function filterProduct(categoryOverride) {
     }
 
     allProducts.innerHTML += `
-        <div class="col-12 text-center mt-5">
-            <button onclick="viewAll()" class="btn btn-lg btn-view-all">
-                View All Products
-            </button>
+        <div class="row w-100 mt-5 mb-5">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <button onclick="viewAll()" class="btn btn-lg btn-view-all">
+                    View All Products
+                </button>
+            </div>
         </div>
     `;
 }
